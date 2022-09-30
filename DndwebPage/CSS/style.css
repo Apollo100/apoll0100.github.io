@@ -1,0 +1,93 @@
+/*
+   1.Root
+   2.NavBar
+   3.Dropdown
+   4.Accordion
+   5.Banner
+   6.NPCLinks
+*/
+
+/*------------------------------------------1) Root------------------------------------------*/
+
+* {
+   margin: 0;
+   padding: 0;
+}
+
+:root {
+   --dark-clr: rgb(48, 72, 82);
+   --primary-clr: rgb(95, 129, 138);
+   --light-clr: rgb(185, 219, 230);
+}
+
+span {
+   padding: 10px;
+   letter-spacing: 2px;
+}
+
+body {
+   background: var(--primary-clr);
+}
+
+/*------------------------------------------2) NavBar------------------------------------------*/
+
+
+.navbar {
+   background: var(--dark-clr);
+   border-bottom: 4px solid var(--primary-clr);
+}
+
+.logo {
+   width: 4em;
+   height: 4em;
+   margin-left: 2em;
+   margin-right: 1em;
+}
+
+
+/*------------------------------------------3) Dropdowns------------------------------------------*/
+
+
+.dropdown-item:hover {
+   background: var(--light-clr);
+}
+
+
+.dropdown-menu {
+   background: var(--primary-clr);
+}
+
+/*------------------------------------------4) Accordion------------------------------------------*/
+
+.accordion-body {
+   background: var(--light-clr);
+}
+
+/*------------------------------------------5) Banner------------------------------------------*/
+
+
+.banner {
+   border-bottom: 4px solid var(--dark-clr);
+}
+
+.text-center, .text-center p {
+   font-family: fantasy;
+   color: var(--dark-clr);
+   font-size: 2em;
+}
+
+
+/*------------------------------------------6) NPC-Links------------------------------------------*/
+
+.NPCLinks
+{
+   text-decoration: none;
+   color: black;
+}
+
+.NPCLinks:hover
+{
+   background: rgba(0, 0, 0, 0.45);
+   font-weight: 500;
+   color: rebeccapurple;
+}

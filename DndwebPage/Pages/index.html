@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/7731291074.js" crossorigin="anonymous"></script>
+    <title>HomePage</title>
+</head>
+
+<!--
+    1. NavBar
+        1.1 NavButtons
+        1.2 NavLinks
+    2. Banner
+    3. Accordion
+        3.1 Session one
+        3.2 Session two
+        3.3 Session three
+        3.4 Session four
+    4. JS Imports
+-->
+
+<body>
+    <!-----------------------------NavBar------------------------------------------>
+    <main class="NavBar">
+            <nav class="navbar navbar-collapse-md navbar-dark">
+                <!--------------------------Nav Buttons--------------------------------------->
+                <button
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    class="navbar-toggler"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    style="margin: 6px;";>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <img class="logo" src="/DndwebPage/Images/tower-fall.png"></h3>
+                <!--------------------------Nav Links------------------------------------------>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav" style="padding-left: 1em;">
+                        <li class="nav-item active"><a href="#" class="nav-link"><i class="fa-solid fa-house"><span>Home</span></i></a></li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"><span>NPCs</span></i></a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a href="/DndwebPage/Pages/NPCMenu/Enemies.html" class="dropdown-item">Enemies</a></li>
+                                <li><a href="/DndwebPage/Pages/NPCMenu/Shop-Keepers.html" class="dropdown-item">Shop-Keepers</a></li>
+                                <li><a href="/DndwebPage/Pages/NPCMenu/Friends.html" class="dropdown-item">Friends</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-map-location-dot"><span>Maps</span></i></a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a href="#" class="dropdown-item">Cities & Towns</a></li>
+                                <li><a href="#" class="dropdown-item">Caves & Dungeons</a></li>
+                                <li><a href="#" class="dropdown-item">World</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-sharp fa-solid fa-bookmark"><span>Guilds</span></i></a>
+                            <ul class="dropdown-menu" aria-describedby="navbarDropdown" >
+                                <li><a href="#" class="dropdown-item">The Iron Clad</a></li>
+                                <li><a href="#" class="dropdown-item">The Holy Church</a></li>
+                                <li><a href="#" class="dropdown-item">The Order of Nature</a></li>
+                                <li><a href="#" class="dropdown-item">The Exiled</a></li>
+                                <li><a href="#" class="dropdown-item">The Royal Council</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-book"><span>Lore & Extras</span></i></a>
+                            <ul class="dropdown-menu" aria-describedby="navbarDropdown">
+                                <li><a href="#" class="dropdown-item">Beast Lore</a></li>
+                                <li><a href="#" class="dropdown-item">Druid Information</a></li>
+                                <li><a href="#" class="dropdown-item">Myths</a></li>
+                                <li><a href="#" class="dropdown-item">Pantheons</a></li>
+                                <li><a href="#" class="dropdown-item">Magic</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav> 
+    </main>
+
+    <!--------------------------Banner------------------------------------------>
+    <img src="/DndwebPage/Images/banner.png" width="100%" class="banner">
+    
+    <article>
+        <section id="Sessions">
+            <div class="container-md">
+                <div class="text-center">
+                    <h1 class="title__text">The Story So Far</h1>
+                    <p class="lead text muted">A Quick Recap of The DnD Campaign</p>
+                </div>
+
+                <!--------------------------Accordion------------------------------------------>
+                <div class="accordion" id="sessions">
+                    <!--------------------------Session One--------------------------------------->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-1">
+                            <button class="accordion-button collapsed" style="background:rgb(48, 72, 82); color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#session-1" aria-expanded="false" aria-controls="session-1" style="color: white;">
+                                <h3>Chapter 1 - Welcome To Endtown</h3>
+                            </button>
+                        </h2>
+                        <div id="session-1" class="accordian-collapse collapse" aria-labelledby="session-1" data-bs-parent="#sessions">
+                            <div class="accordion-body">
+                                <p>Our adventurers began there journey in the wonderful town of EndTown, a small town of roughly 2,000 people that found it's stride in the paint industry. Upon arrival in town, the group made their way to the pub, The Drunken Fighter, where they were greated by a kind group of locals that consisted of; <a href="#" class="NPCLinks">Kirk<i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>, <a href="#" class="NPCLinks">Grand Paladin Roman<i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>, and Kirks Kid's (three beautiful half-human/half-dragonborne). It was in this tavern they found the job board and decided that they would begin working to make lasting mark on this town. They looked over the available jobs, and carefully accepted one that seemed easy enogh - a farm has been being terrorized through the night, someone was destroying their crops and they needed someone to watch over them through the night. Upon arriving at the farm they were greeted by an old raggedy farmer who introduced himself as <a href="#" class="NPCLinks">Oldman Felix McFee<i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, iusto quia ad officia numquam mollitia tempore sapiente doloribus vitae itaque nulla facere ab odio corrupti, a optio sit, delectus doloremque.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, iusto quia ad officia numquam mollitia tempore sapiente doloribus vitae itaque nulla facere ab odio corrupti, a optio sit, delectus doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <!--------------------------Session Two------------------------------------------>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-2">
+                            <button class="accordion-button collapsed"style="background:rgb(48, 72, 82); color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#session-2" aria-expanded="false" aria-controls="session-2">
+                                <h3>Chapter 2 - The Kids Are Taken</h3> 
+                            </button>
+                        </h2>
+                        <div id="session-2" class="accordian-collapse collapse" aria-labelledby="session-2" data-bs-parent="#sessions">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi expedita, veniam repellendus odio sint ipsam incidunt repudiandae illum laboriosam earum similique adipisci, perferendis at porro laborum molestias. Cum, ipsum nostrum!.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, iusto quia ad officia numquam mollitia tempore sapiente doloribus vitae itaque nulla facere ab odio corrupti, a optio sit, delectus doloremque.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, iusto quia ad officia numquam mollitia tempore sapiente doloribus vitae itaque nulla facere ab odio corrupti, a optio sit, delectus doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <!--------------------------Session Three------------------------------------------>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-3">
+                            <button class="accordion-button collapsed" style="background:rgb(48, 72, 82); color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#session-3" aria-expanded="false" aria-controls="session-3">
+                                <h3>Chapter 3 - A Threat Appears</h3> 
+                            </button>
+                        </h2>
+                        <div id="session-3" class="accordian-collapse collapse" aria-labelledby="session-3" data-bs-parent="#sessions">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, iusto quia ad officia numquam mollitia tempore sapiente doloribus vitae itaque nulla facere ab odio corrupti, a optio sit, delectus doloremque.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, iusto quia ad officia numquam mollitia tempore sapiente doloribus vitae itaque nulla facere ab odio corrupti, a optio sit, delectus doloremque.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, iusto quia ad officia numquam mollitia tempore sapiente doloribus vitae itaque nulla facere ab odio corrupti, a optio sit, delectus doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <!--------------------------Session Four------------------------------------------>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading-4">
+                            <button class="accordion-button collapsed"style="background:rgb(48, 72, 82); color:white;" type="button" data-bs-toggle="collapse" data-bs-target="#session-4" aria-expanded="false" aria-controls="session-4">
+                                <h3>Chapter 4 - The Fall of Hammer</h3> 
+                            </button>
+                        </h2>
+                        <div id="session-4" class="accordian-collapse collapse" aria-labelledby="session-4" data-bs-parent="#sessions">
+                            <div class="accordion-body">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi expedita, veniam repellendus odio sint ipsam incidunt repudiandae illum laboriosam earum similique adipisci, perferendis at porro laborum molestias. Cum, ipsum nostrum!.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, iusto quia ad officia numquam mollitia tempore sapiente doloribus vitae itaque nulla facere ab odio corrupti, a optio sit, delectus doloremque.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, iusto quia ad officia numquam mollitia tempore sapiente doloribus vitae itaque nulla facere ab odio corrupti, a optio sit, delectus doloremque.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <!--------------------------JS Imports------------------------------------------>
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+</body>
+</html>
