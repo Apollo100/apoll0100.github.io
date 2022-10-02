@@ -9,61 +9,104 @@
 
 /*------------------------------------------1) Root------------------------------------------*/
 
-* {
+:root {
+   font-size: 16px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   --dark-clr: #212121;
+   --primary-clr: #757575;
+   --light-clr: #f0f5f9;
+   --text-primary: #C9d6df;
+   --text-secondary: #ececec;
+   --bg-primary: #222831;
+   --bg-secondary: #393E46;
+}
+
+body {
+   color: black;
+   background: var(--primary-clr);
    margin: 0;
    padding: 0;
 }
 
-:root {
-   --dark-clr: rgb(48, 72, 82);
-   --primary-clr: rgb(95, 129, 138);
-   --light-clr: rgb(185, 219, 230);
-}
-
-span {
-   padding: 10px;
-   letter-spacing: 2px;
-}
-
-body {
-   background: var(--primary-clr);
+main
+{
+   margin-left: 5rem;
+   padding: 1rem;
 }
 
 /*------------------------------------------2) NavBar------------------------------------------*/
 
-
-.navbar {
-   background: var(--dark-clr);
-   border-bottom: 4px solid var(--primary-clr);
+.navbar
+{
+   position: fixed;
+   background-color: var(--bg-primary);
+   transition: width 200ms ease;
 }
 
-.logo {
-   width: 4em;
-   height: 4em;
-   margin-left: 2em;
-   margin-right: 1em;
+.nav-item img
+{
+   padding-left: 1rem;
 }
 
-
-/*------------------------------------------3) Dropdowns------------------------------------------*/
-
-
-.dropdown-item:hover {
-   background: var(--light-clr);
+.navbar-nav
+{
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
-
-.dropdown-menu {
-   background: var(--primary-clr);
+.nav-item
+{
+   width: 100%;
 }
 
-/*------------------------------------------4) Accordion------------------------------------------*/
-
-.accordion-body {
-   background: var(--light-clr);
+.nav-item:last-child
+{
+   margin-top: auto;
 }
 
-/*------------------------------------------5) Banner------------------------------------------*/
+.nav-link
+{
+   display: flex;
+   align-items: center;
+   height: 5rem;
+   color: var(--text-primary);
+   text-decoration: none;
+}
+
+.link-text
+{
+   display: none;
+   margin-left: 1rem;
+}
+.nav-link svg
+{
+   min-width: 2rem;
+   margin: 0 1.5rem;
+}
+
+.navbar img
+{
+   width:  3rem;
+   height: 3rem;
+}
+
+/*------------------------------------------3) NavBar Animations------------------------------------------*/
+
+.navbar:hover .link-text
+{
+   display: block;
+}
+
+.nav-link:hover
+{
+   background: var(--bg-secondary);
+}
+
+/*------------------------------------------4) Banner------------------------------------------*/
 
 
 .banner {
@@ -77,7 +120,7 @@ body {
 }
 
 
-/*------------------------------------------6) NPC-Links------------------------------------------*/
+/*------------------------------------------5) NPC-Links------------------------------------------*/
 
 .NPCLinks
 {
@@ -90,4 +133,145 @@ body {
    background: rgba(0, 0, 0, 0.45);
    font-weight: 500;
    color: rebeccapurple;
+}
+
+/*------------------------------------------5) Accordion-Menu------------------------------------------*/
+
+.accordion
+{
+   max-width: 25em;
+   margin-left: 2.75em;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   font-family: 'Quicksand', sans-serif;
+   overflow: hidden;
+   background: var(--light-clr);
+   margin-bottom: 2em;
+}
+
+.accordion__label,
+.accordion__content
+{
+   padding: 28px 20px;
+}
+
+.accordion__label
+{
+   display: block;
+   color: var(--bg-primary);
+   font-weight: 500;
+   cursor: pointer;
+   position: relative;
+   transition: background 0.1s;
+}
+
+.accordion__label::after
+{
+   content: "\f078";
+   font-family: FontAwesome;
+   position: absolute;
+   transform: translateY(-50%);
+   right: 20px;
+   top: 1.95em;
+   width: 12px;
+   height: 6px;
+   transition: transform 0.4s;
+}
+
+.accordion__content
+{
+   background: #ffffff;
+   line-height: 1.6;
+   font-size: 0.85em;
+   display: none;
+}
+
+.accordion__input
+{
+   display: none;
+}
+
+.accordion__input:checked ~ .accordion__content
+{
+   display: block;
+}
+
+.accordion__label:hover
+{
+   background: rgba(0, 0, 0, 0.1);
+}
+
+/*------------------------------------------6) Media-Query------------------------------------------*/
+
+/*Small Screens*/
+@media only screen and (max-width: 600px)
+{
+   .navbar
+   {
+      bottom: 0;
+      width: 100vw;
+      height: 5rem;
+   }
+
+   .navbar-nav
+   {
+      flex-direction: row;
+
+   }
+
+   .link-text
+   {
+      display: none;
+   }
+
+   .nav-link
+   {
+      justify-content: center;
+   }
+
+   main
+   {
+      margin: 0;
+   }
+
+   .navbar:hover .link-text
+   {
+      display: none;
+   }
+
+   .navbar img
+   {
+      padding-right: 1em;
+   }
+
+   .accordion
+   {
+      margin-left: .5em;
+   }
+}
+
+/*Large Screens*/
+@media only screen and (min-width: 600px)
+{
+    .navbar
+    {
+      top: 0;
+      width: 5rem;
+      height: 100vh;
+    }
+    .navbar:hover
+    {
+      width: 8rem;
+    }
+    
+    .navbar:hover .link-text
+    {
+      display: inline;
+      transition: opacity var(1000ms);
+    }
+
+    .accordion
+    {
+      margin-left: 2.75em;
+    }
 }

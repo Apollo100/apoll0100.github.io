@@ -14,7 +14,8 @@
     --light-clr: rgb(185, 219, 230);
 }
 
-li
+/*------------------------------------------6) NPC-Cards-Styles------------------------------------------*/
+.NPC-Stats
 {
     list-style-type: none;
     padding: 0;
@@ -42,15 +43,14 @@ li
     font-family: FontAwesome;
 }
 
-body
+.NPC-Cards
 {
     background: var(--dark-clr);
     width: 100%;
     height: 100%;
-    padding-right: 15em;
 }
 
-.container
+.Card-Container
 {
     width: 100%;
     height: 100%;
@@ -109,7 +109,7 @@ body
 }
 
 
-.button
+.NPC-Card-Button
 {
     cursor: pointer;
     display: inline-block;
@@ -158,8 +158,8 @@ body
         transition-delay: 1000ms;
     }
 
-    .button:hover,
-    .button:focus{
+    .NPC-Card-Button:hover,
+    .NPC-Card-Button:focus{
     background-color: var(--primary-clr);
     }
     .card:hover .card-title::after,
