@@ -10,268 +10,245 @@
 /*------------------------------------------1) Root------------------------------------------*/
 
 :root {
-   font-size: 16px;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   --dark-clr: #212121;
-   --primary-clr: #757575;
-   --light-clr: #f0f5f9;
-   --text-primary: #C9d6df;
-   --text-secondary: #ececec;
-   --bg-primary: #222831;
-   --bg-secondary: #393E46;
+  font-size: 16px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  --dark-clr: #212121;
+  --primary-clr: #757575;
+  --light-clr: #f0f5f9;
+  --text-primary: #c9d6df;
+  --text-secondary: #ececec;
+  --bg-primary: #222831;
+  --bg-secondary: #393e46;
 }
 
 body {
-   color: black;
-   background: var(--primary-clr);
-   margin: 0;
-   padding: 0;
+  color: black;
+  background: var(--primary-clr);
+  margin: 0;
+  padding: 0;
 }
 
-main
-{
-   margin-left: 5rem;
-   padding: 1rem;
+main {
+  margin-left: 5rem;
+  padding: 1rem;
 }
 
 /*------------------------------------------2) NavBar------------------------------------------*/
 
-.navbar
-{
-   position: fixed;
-   background-color: var(--bg-primary);
-   transition: width 200ms ease;
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 200ms ease;
 }
 
-.nav-item img
-{
-   padding-left: 1rem;
+.nav-item img {
+  padding-left: 1rem;
 }
 
-.navbar-nav
-{
-   list-style: none;
-   padding: 0;
-   margin: 0;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.nav-item
-{
-   width: 100%;
+.nav-item {
+  width: 100%;
 }
 
-.nav-item:last-child
-{
-   margin-top: auto;
+.nav-item:last-child {
+  margin-top: auto;
 }
 
-.nav-link
-{
-   display: flex;
-   align-items: center;
-   height: 5rem;
-   color: var(--text-primary);
-   text-decoration: none;
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
-.link-text
-{
-   display: none;
-   margin-left: 1rem;
-}
-.nav-link svg
-{
-   min-width: 2rem;
-   margin: 0 1.5rem;
+.link-text {
+  display: none;
+  margin-left: 1rem;
 }
 
-.navbar img
-{
-   width:  3rem;
-   height: 3rem;
+.nav-link svg {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.navbar img {
+  width: 3rem;
+  height: 3rem;
 }
 
 /*------------------------------------------3) NavBar Animations------------------------------------------*/
 
-.navbar:hover .link-text
-{
-   display: block;
+.navbar:hover .link-text {
+  display: block;
 }
 
-.nav-link:hover
-{
-   background: var(--bg-secondary);
+.nav-link:hover {
+  background: var(--bg-secondary);
 }
 
 /*------------------------------------------4) Banner------------------------------------------*/
 
-
 .banner {
-   border-bottom: 4px solid var(--dark-clr);
+  border-bottom: 4px solid var(--dark-clr);
 }
 
-.text-center, .text-center p {
-   font-family: fantasy;
-   color: var(--dark-clr);
-   font-size: 2em;
+.text-center,
+.text-center p {
+  font-family: fantasy;
+  color: var(--dark-clr);
+  font-size: 2em;
 }
-
 
 /*------------------------------------------5) NPC-Links------------------------------------------*/
 
-.NPCLinks
-{
-   text-decoration: none;
-   color: black;
+.NPCLinks {
+  text-decoration: none;
+  color: black;
 }
 
-.NPCLinks:hover
-{
-   background: rgba(0, 0, 0, 0.45);
-   font-weight: 500;
-   color: rebeccapurple;
+.NPCLinks:hover {
+  background: rgba(0, 0, 0, 0.45);
+  font-weight: 500;
+  color: rebeccapurple;
 }
 
 /*------------------------------------------5) Accordion-Menu------------------------------------------*/
 
-.accordion
-{
-   max-width: 25em;
-   margin-left: 2.75em;
-   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-   border-radius: 5px;
-   font-family: 'Quicksand', sans-serif;
-   overflow: hidden;
-   background: var(--light-clr);
-   margin-bottom: 2em;
+.accordion {
+  max-width: 25em;
+  margin-left: 2.75em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-family: "Quicksand", sans-serif;
+  overflow: hidden;
+  background: var(--light-clr);
+  margin-bottom: 2em;
 }
 
 .accordion__label,
-.accordion__content
-{
-   padding: 28px 20px;
+.accordion__content {
+  padding: 28px 20px;
 }
 
-.accordion__label
-{
-   display: block;
-   color: var(--bg-primary);
-   font-weight: 500;
-   cursor: pointer;
-   position: relative;
-   transition: background 0.1s;
+.accordion__label {
+  display: block;
+  color: var(--bg-primary);
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
 }
 
-.accordion__label::after
-{
-   content: "\f078";
-   font-family: FontAwesome;
-   position: absolute;
-   transform: translateY(-50%);
-   right: 20px;
-   top: 1.95em;
-   width: 12px;
-   height: 6px;
-   transition: transform 0.4s;
+.accordion__label::after {
+  content: "\f078";
+  font-family: FontAwesome;
+  position: absolute;
+  transform: translateY(-50%);
+  right: 20px;
+  top: 1.95em;
+  width: 12px;
+  height: 6px;
+  transition: transform 0.4s;
 }
 
-.accordion__content
-{
-   background: #ffffff;
-   line-height: 1.6;
-   font-size: 0.85em;
-   display: none;
+.accordion__content {
+  background: #ffffff;
+  line-height: 1.6;
+  font-size: 0.85em;
+  display: none;
 }
 
-.accordion__input
-{
-   display: none;
+.accordion__input {
+  display: none;
 }
 
-.accordion__input:checked ~ .accordion__content
-{
-   display: block;
+.accordion__input:checked~.accordion__content {
+  display: block;
 }
 
-.accordion__label:hover
-{
-   background: rgba(0, 0, 0, 0.1);
+.accordion__label:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /*------------------------------------------6) Media-Query------------------------------------------*/
 
 /*Small Screens*/
-@media only screen and (max-width: 600px)
-{
-   .navbar
-   {
-      bottom: 0;
-      width: 100vw;
-      height: 5rem;
-   }
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
 
-   .navbar-nav
-   {
-      flex-direction: row;
+  .navbar-nav {
+    flex-direction: row;
+  }
 
-   }
+  .link-text {
+    display: none;
+  }
 
-   .link-text
-   {
-      display: none;
-   }
+  .nav-link {
+    justify-content: center;
+  }
 
-   .nav-link
-   {
-      justify-content: center;
-   }
+  main {
+    margin: 0;
+  }
 
-   main
-   {
-      margin: 0;
-   }
+  .navbar:hover .link-text {
+    display: none;
+  }
 
-   .navbar:hover .link-text
-   {
-      display: none;
-   }
+  .navbar img {
+    padding-right: 1em;
+  }
 
-   .navbar img
-   {
-      padding-right: 1em;
-   }
-
-   .accordion
-   {
-      margin-left: .5em;
-   }
+  .accordion {
+    margin-left: 0.5em;
+  }
 }
 
 /*Large Screens*/
-@media only screen and (min-width: 600px)
-{
-    .navbar
-    {
-      top: 0;
-      width: 5rem;
-      height: 100vh;
-    }
-    .navbar:hover
-    {
-      width: 8rem;
-    }
-    
-    .navbar:hover .link-text
-    {
-      display: inline;
-      transition: opacity var(1000ms);
-    }
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
 
-    .accordion
-    {
-      margin-left: 2.75em;
-    }
+  .navbar:hover {
+    width: 8rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+    transition: opacity var(1000ms);
+  }
+
+  .accordion {
+    margin-left: 2.75em;
+  }
+}
+
+/*--------------------Chris' CSS-----------------*/
+
+.modal {
+  padding: 1em;
+  max-width: 50ch;
+
+}
+
+.ch-stats {
+  display: flex;
+  flex-direction: column;
 }
