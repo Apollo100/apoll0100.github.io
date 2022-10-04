@@ -278,20 +278,20 @@ dialog:modal {
   flex-direction: column;
 }
 
-a:visited {
+a.subpages:visited {
   text-decoration: none;
   color: aqua;
 }
 
-a:link {
+a.subpages:link {
   text-decoration: none;
 }
 
-a:hover {
+a.subpages:hover {
   text-decoration: none;
 }
 
-a:active {
+a.subpages:active {
   text-decoration: none;
 }
 
