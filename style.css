@@ -9,9 +9,6 @@
 
 /*------------------------------------------1) Root------------------------------------------*/
 
-@import "https://unpkg.com/open-props";
-@import "https://unpkg.com/open-props/normalize.min.css";
-
 :root {
   font-size: 16px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -38,11 +35,10 @@ main {
 
 /*------------------------------------------2) NavBar------------------------------------------*/
 
-.navbar
-{
-   position: fixed;
-   background-color: var(--bg-primary);
-   transition: width 200ms ease;
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 200ms ease;
 }
 
 .nav-item img {
@@ -125,93 +121,62 @@ main {
   color: rebeccapurple;
 }
 
-.card
-{
-   padding-left: 1em;
-   padding: .25rem;
-   margin: .5em;
-   height: fit-content;
-   max-width: 25%;
-   background: var(--bg-primary);
-   border-radius: .5rem;
-   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-   cursor: default;
+/*------------------------------------------5) Accordion-Menu------------------------------------------*/
+
+.accordion {
+  max-width: 25em;
+  margin-left: 2.75em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-family: "Quicksand", sans-serif;
+  overflow: hidden;
+  background: var(--light-clr);
+  margin-bottom: 2em;
 }
 
-.GroupID
-{
-   display: block;
-   margin-left: 3em;
-   letter-spacing: .25rem;
+.accordion__label,
+.accordion__content {
+  padding: 28px 20px;
 }
 
-.card-body
-{
-   font-size: .9rem;
+.accordion__label {
+  display: block;
+  color: var(--bg-primary);
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
 }
 
-.card-header
-{
-   font-size: 1.5rem;
-   margin-bottom: .5rem;
+.accordion__label::after {
+  content: "\f078";
+  font-family: FontAwesome;
+  position: absolute;
+  transform: translateY(-50%);
+  right: 20px;
+  top: 1.95em;
+  width: 12px;
+  height: 6px;
+  transition: transform 0.4s;
 }
 
-.card-footer
-{
-   margin-top: .5rem;
+.accordion__content {
+  background: #ffffff;
+  line-height: 1.6;
+  font-size: 0.85em;
+  display: none;
 }
 
-.btn
-{
-   background: hsl(200, 50%, 50%);
-   color: white;
-   border: none;
-   font-size: 1rem;
-   margin-bottom: .5em;
-   padding: .5rem .75rem;
-   border-radius: .3rem;
-   cursor: pointer;
+.accordion__input {
+  display: none;
 }
 
-.btn:hover, .btn:focus
-{
-   background: hsl(200, 50%, 60%);
+.accordion__input:checked~.accordion__content {
+  display: block;
 }
 
-.card li
-{
-   list-style-type: none;
-   display: block;
-   margin-bottom: 1.15em;
-   font-family: 'Times New Roman', Times, serif;
-   font-weight: bold;
-}
-
-.container
-{
-   display: flex;
-   justify-content: center;
-}
-
-.slider
-{
-   padding-left: 5em ;
-   display: flex;
-   flex-grow: 1;
-   width: calc(100% - 10rem);
-   transform: translateX(-00%);
-}
-
-.handle
-{
-   flex-grow: 0;
-   width: 5rem;
-   background-color: rgba(0, 0, 0, 0.5);
-   border: none;
-   border-radius: 1rem;
-   z-index: 10;
-   margin: .25 0;
-   cursor: pointer;
+.accordion__label:hover {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /*------------------------------------------6) Media-Query------------------------------------------*/
@@ -224,10 +189,13 @@ main {
     height: 5rem;
   }
 
-   .navbar-nav
-   {
-      flex-direction: row;
-   }
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .link-text {
+    display: none;
+  }
 
   .nav-link {
     justify-content: center;
@@ -245,73 +213,48 @@ main {
     padding-right: 1em;
   }
 
-   .navbar img
-   {
-      padding-right: 1em;
-   }
+  .accordion {
+    margin-left: 0.5em;
+  }
 }
 
 /*Large Screens*/
-@media only screen and (min-width: 600px)
-{
-    .navbar
-    {
-      top: 0;
-      width: 5rem;
-      height: 100vh;
-    }
-    .navbar:hover
-    {
-      width: 8rem;
-    }
-    
-    .navbar:hover .link-text
-    {
-      display: inline;
-      transition: opacity var(1000ms);
-    }
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 8rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+    transition: opacity var(1000ms);
+  }
+
+  .accordion {
+    margin-left: 2.75em;
+  }
 }
 
 /*--------------------Chris' CSS-----------------*/
 
-
 .modal {
   padding: 1em;
   max-width: 50ch;
-  background-color: #757575;
-}
-
-.ch-button {
-  background-color: #4a515c;
-  border-radius: 15px;
-  color: rgb(255, 255, 255);
-  padding: 1em;
-  font: 1.2em "Fira Sans", serif;
-}
-
-dialog:modal {
   display: flex;
   flex-direction: column;
-}
-
-a:visited {
-  text-decoration: none;
-  color: aqua;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
 }
 
 .ch-stats {
   display: flex;
   flex-direction: column;
+}
+
+.ch-button {
+  color: rgb(0, 255, 255);
+  padding: 2em;
 }
