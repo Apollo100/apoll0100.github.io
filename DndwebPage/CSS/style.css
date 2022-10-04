@@ -40,11 +40,10 @@ main {
 
 /*------------------------------------------2) NavBar------------------------------------------*/
 
-.navbar
-{
-   position: fixed;
-   background-color: var(--bg-primary);
-   transition: width 200ms ease;
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 200ms ease;
 }
 
 .nav-item img {
@@ -252,10 +251,9 @@ main {
     height: 5rem;
   }
 
-   .navbar-nav
-   {
-      flex-direction: row;
-   }
+  .navbar-nav {
+    flex-direction: row;
+  }
 
   .nav-link {
     justify-content: center;
@@ -273,31 +271,27 @@ main {
     padding-right: 1em;
   }
 
-   .navbar img
-   {
-      padding-right: 1em;
-   }
+  .navbar img {
+    padding-right: 1em;
+  }
 }
 
 /*Large Screens*/
-@media only screen and (min-width: 600px)
-{
-    .navbar
-    {
-      top: 0;
-      width: 5rem;
-      height: 100vh;
-    }
-    .navbar:hover
-    {
-      width: 8rem;
-    }
-    
-    .navbar:hover .link-text
-    {
-      display: inline;
-      transition: opacity var(1000ms);
-    }
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 8rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+    transition: opacity var(1000ms);
+  }
 }
 
 @media(prefers-reduced-motion: reduce)
@@ -321,6 +315,7 @@ main {
   padding: 1em;
   max-width: 50ch;
   background-color: #757575;
+  justify-content: center;
 }
 
 .ch-button {
@@ -336,24 +331,31 @@ dialog:modal {
   flex-direction: column;
 }
 
-a:visited {
+a.subpages:visited {
   text-decoration: none;
   color: aqua;
 }
 
-a:link {
+a.subpages:link {
   text-decoration: none;
 }
 
-a:hover {
+a.subpages:hover {
   text-decoration: none;
 }
 
-a:active {
+a.subpages:active {
   text-decoration: none;
 }
 
 .ch-stats {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
