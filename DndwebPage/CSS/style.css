@@ -15,20 +15,16 @@
 :root {
   font-size: 16px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  --dark-clr: #212121;
-  --primary-clr: #757575;
-  --light-clr: #f0f5f9;
-  --text-primary: #c9d6df;
-  --text-secondary: #ececec;
-  --bg-primary: #222831;
-  --bg-secondary: #393e46;
+  --light-primary-clr: rgb(136, 48, 176);
+  --light-secondary-clr: rgb(43, 116, 161);
+  --main-clr: rgb(183, 153, 13);
   --primary-font: "Times New Roman", Times, Serif;
   --secondary-font: "Manaco", "Courier New", monospace;
 }
 
 body {
   color: black;
-  background: var(--primary-clr);
+  background-color: var(--light-primary-clr);
   margin: 0;
   padding: 0;
 }
@@ -42,7 +38,7 @@ main {
 
 .navbar {
   position: fixed;
-  background-color: var(--bg-primary);
+  background-color: var(--light-secondary-clr);
   transition: width 200ms ease;
 }
 
@@ -97,7 +93,7 @@ main {
 }
 
 .nav-link:hover {
-  background: var(--bg-secondary);
+  background: rgba(136, 48, 176, 0.5);
 }
 
 /*------------------------------------------4) Banner------------------------------------------*/
@@ -126,119 +122,111 @@ main {
   color: rebeccapurple;
 }
 
-.content
-{
-   padding-top: 2em;
-   display: grid;
-   grid-auto-flow: column;
-   grid-auto-columns: 25%;
-}
 
 /*------------------------------------------6) Card-Styling------------------------------------------*/
-.card
-{
-   margin-left: 8em;
-   width: 320px;;
-   border-radius: 25px;
-   background-color: var(--bg-secondary);
+.title{
+  width: 100%;
+  text-align: center;
+  padding-top: 1.5em;
+  padding-bottom: 0;
+  justify-content: center;
+}
+.card-wrapper{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 2em;
+  align-content: center;
+  overflow: auto;
 }
 
-.name
-{
-   font-family: var(--primary-font);
-}
+.card{
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 210px 210px 80px;
+  grid-template-areas: "image" "text" "stat";
+  margin-bottom: 1em;
 
-.image-content, .card-content
-{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding: 10px 10px;
+  font-family: roboto;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  text-align: center;
+
+  transition: 0.5s ease;
+  cursor: pointer;
 }
 
 .card-image{
-   position: relative;
-   height: 150px;
-   width: 150px;
-   border-radius: 50%;
-   padding: 3px;
+  grid-area: image;
+  background: url("/Images/Portrait_Placeholder.png");
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-size: cover;
 }
 
-.card-image .card-img
+.card-text{
+  grid-area: text;
+  margin: 1em;
+}
+
+.card-text p{
+  color: grey;
+  font-size: 15px;
+  font-weight: 300px;
+}
+
+.card-text h2{
+  margin-block-start: 0px;
+  color: black;
+  font-size: 28px;
+}
+
+.card-stats{
+  grid-area: stat;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background: rgb(255, 7, 110);
+}
+
+.card-stats .stat{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  color: white;
+}
+
+.card-stats .type{
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.card-stats .value{
+  font-size: 22px;
+  font-weight: 500;
+}
+ 
+.card-stats .border{
+  border-left: 1px solid rgb(172, 26, 87);
+  border-right: 1px solid rgb(172, 26, 87);
+}
+
+.card-stats .value sup
 {
-   height: 100%;
-   width: 100%;
-   object-fit: cover;
-   border-radius: 50%;
-   border: 4px solid var(--bg-secondary);
+  font-size: 12px;
 }
 
-.description
+.card:hover
 {
-   font-family: var(--secondary-font);
-}
-
-.card-content
-{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   padding: 10px 14px;
-}
-
-.image-content
-{
-   position: relative;
-   row-gap: 5px;
-}
-
-.slide-content
-{
-   margin: 0 40px;
-   width: 50%;
-   justify-content: center;
-}
-
-
-.overlay
-{
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   left: 0;
-   top: 0px;
-   background-color: var(--dark-clr);
-   border-radius: 25px 25px 0 25px;
-}
-
-/*------------------------------------------6.1) Card-Button-Styling------------------------------------------*/
-
-.button{
-   border: none;
-   font-size: 16px;
-   color: #c9d6df;
-   padding: 8px;
-   background-color: var(--primary-clr);
-   border-radius: 6px;
-   margin: 14px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-}
-
-.button:hover
-{
-   background-color: var(--dark-clr);
-}
-
-
-/*------------------------------------------6.2) Card-Slider------------------------------------------*/
-
-.slider-container
-{
-   max-width: 1120px;
-   width: 100%;
-   padding: 40px 0;
-   justify-content: center;
+  transform: scale(1.05);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
 /*------------------------------------------6) Media-Queries------------------------------------------*/
@@ -274,6 +262,19 @@ main {
   .navbar img {
     padding-right: 1em;
   }
+
+  .card{
+    margin-left: 6em;
+  }
+
+  .card-wrapper{
+    height: 100vh;
+  }
+
+  .card-wrapper{
+    flex-direction: column;
+  }
+  
 }
 
 /*Large Screens*/
@@ -290,8 +291,13 @@ main {
 
   .navbar:hover .link-text {
     display: inline;
-    transition: opacity var(1000ms);
+    transition: opacity 1000ms;
   }
+
+  .card{
+   margin-left: 8em;
+  }
+
 }
 
 @media(prefers-reduced-motion: reduce)
