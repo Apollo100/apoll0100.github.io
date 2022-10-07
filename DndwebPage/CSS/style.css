@@ -15,18 +15,18 @@
 :root {
   font-size: 16px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  --light-primary-clr: rgb(136, 48, 176);
-  --light-secondary-clr: rgb(43, 116, 161);
-  --dark-primary-clr: rgb(66, 34, 76);
-  --dark-secondary-clr: rgb(42, 84, 92);
-  --main-clr: rgb(183, 153, 13);
-  --primary-font: "Times New Roman", Times, Serif;
-  --secondary-font: "Manaco", "Courier New", monospace;
+  --dark-clr: #212121;
+  --primary-clr: #757575;
+  --light-clr: #f0f5f9;
+  --text-primary: #c9d6df;
+  --text-secondary: #ececec;
+  --bg-primary: #222831;
+  --bg-secondary: #393e46;
 }
 
 body {
   color: black;
-  background-color: var(--light-primary-clr);
+  background: var(--primary-clr);
   margin: 0;
   padding: 0;
 }
@@ -40,9 +40,8 @@ main {
 
 .navbar {
   position: fixed;
-  background-color: var(--light-secondary-clr);
+  background-color: var(--bg-primary);
   transition: width 200ms ease;
-  border-right: 4px solid var(--main-clr);
 }
 
 .nav-item img {
@@ -96,7 +95,7 @@ main {
 }
 
 .nav-link:hover {
-  background: rgba(136, 48, 176, 0.5);
+  background: var(--bg-secondary);
 }
 
 /*------------------------------------------4) Banner------------------------------------------*/
@@ -125,112 +124,85 @@ main {
   color: rebeccapurple;
 }
 
-
-/*------------------------------------------6) Card-Styling------------------------------------------*/
-.title {
-  width: 100%;
-  text-align: center;
-  padding-top: 1.5em;
-  padding-bottom: 0;
-  justify-content: center;
-}
-
-.card-wrapper {
-  width: 100vw;
-  height: 100vh;
-  min-width: 50vw;
-  min-height: 50vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  overflow: auto;
-}
-
 .card {
-  display: grid;
-  grid-template-columns: 300px;
-  grid-template-rows: 210px 210px 80px;
-  grid-template-areas: "image""text""stat";
-  margin-bottom: 1em;
-  border: 4px solid var(--light-primary-clr);
+  padding-left: 1em;
+  padding: .25rem;
+  margin: .5em;
+  height: fit-content;
+  max-width: 25%;
+  background: var(--bg-primary);
+  border-radius: .5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
 
-  font-family: roboto;
-  border-radius: 18px;
-  background: white;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-  text-align: center;
+.GroupID {
+  display: block;
+  margin-left: 3em;
+  letter-spacing: .25rem;
+}
+
+.card-body {
+  font-size: .9rem;
+}
+
+.card-header {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+}
+
+.card-footer {
+  margin-top: .5rem;
+}
+
+.btn {
+  background: hsl(200, 50%, 50%);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: .5em;
+  padding: .5rem .75rem;
+  border-radius: .3rem;
   cursor: pointer;
 }
 
-.card-image {
-  grid-area: image;
-  background: url("/Images/Portrait_Placeholder.png");
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-size: cover;
+.btn:hover, .btn:focus {
+  background: hsl(200, 50%, 60%);
 }
 
-.card-text {
-  grid-area: text;
-  margin: 1em;
+.card li {
+  list-style-type: none;
+  display: block;
+  margin-bottom: 1.15em;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
 }
 
-.card-text p {
-  color: grey;
-  font-size: 15px;
-  font-weight: 300px;
-}
-
-.card-text h2 {
-  margin-block-start: 0px;
-  color: black;
-  font-size: 28px;
-}
-
-.card-stats {
-  grid-area: stat;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background: rgb(255, 7, 110);
-}
-
-.card-stats .stat {
+.container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  color: white;
 }
 
-.card-stats .type {
-  font-size: 11px;
-  font-weight: 300;
-  text-transform: uppercase;
+.slider {
+  padding-left: 5em;
+  display: flex;
+  flex-grow: 1;
+  width: calc(100% - 10rem);
+  transform: translateX(-00%);
 }
 
-.card-stats .value {
-  font-size: 22px;
-  font-weight: 500;
+.handle {
+  flex-grow: 0;
+  width: 5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 1rem;
+  z-index: 10;
+  margin: .25 0;
+  cursor: pointer;
 }
 
-.card-stats .border {
-  border-left: 1px solid rgb(172, 26, 87);
-  border-right: 1px solid rgb(172, 26, 87);
-}
-
-.card-stats .value sup {
-  font-size: 12px;
-}
-
-.card:hover {
-  border: 4px solid var(--main-clr);
-}
-
-/*------------------------------------------6) Media-Queries------------------------------------------*/
+/*------------------------------------------6) Media-Query------------------------------------------*/
 
 /*Small Screens*/
 @media only screen and (max-width: 600px) {
@@ -248,6 +220,10 @@ main {
     justify-content: center;
   }
 
+  main {
+    margin: 0;
+  }
+
   .navbar:hover .link-text {
     display: none;
   }
@@ -259,19 +235,6 @@ main {
   .navbar img {
     padding-right: 1em;
   }
-
-  .card {
-    margin-left: 6em;
-  }
-
-  .card-wrapper {
-    height: 100vh;
-  }
-
-  .card-wrapper {
-    flex-direction: column;
-  }
-
 }
 
 /*Large Screens*/
@@ -288,42 +251,7 @@ main {
 
   .navbar:hover .link-text {
     display: inline;
-    transition: opacity 1000ms;
-  }
-
-  .card {
-    margin-left: 8em;
-  }
-
-  .card-wrapper {
-    padding-top: 8em;
-
-  }
-
-}
-
-/*Prefers Reduced Motion*/
-@media(prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-    transition-delay: 0 !important;
-  }
-}
-
-/*dark mode/light mode*/
-@media(prefers-color-scheme: dark) {
-  body {
-    background: var(--dark-primary-clr);
-  }
-
-  .navbar {
-    background-color: var(--dark-secondary-clr);
+    transition: opacity var(1000ms);
   }
 }
 
@@ -350,20 +278,20 @@ dialog:modal {
   flex-direction: column;
 }
 
-a.subpages:visited {
+a:visited {
   text-decoration: none;
   color: aqua;
 }
 
-a.subpages:link {
+a:link {
   text-decoration: none;
 }
 
-a.subpages:hover {
+a:hover {
   text-decoration: none;
 }
 
-a.subpages:active {
+a:active {
   text-decoration: none;
 }
 
@@ -378,3 +306,5 @@ a.subpages:active {
   justify-content: center;
   width: 100%;
 }
+
+.corestat {}
