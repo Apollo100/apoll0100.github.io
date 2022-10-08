@@ -60,12 +60,6 @@ main {
   margin-top: 12.5em;
 }
 
-.cog
-{
-  transition-delay: 5ms;
-  transition: ease 1000ms;
-}
-
 .nav-link {
   display: flex;
   align-items: center;
@@ -87,6 +81,32 @@ main {
   fill: black;
 }
 
+/*------------------------------------------3) Options Menu------------------------------------------*/
+
+.open-button
+{
+  border: none;
+  background: none;
+}
+
+.cog{
+  transition: 1000ms ease;
+  transition-delay: 2ms;
+  fill: black;
+  transition-delay: rotate 2s;
+  transition: 2ss ease;
+}
+
+.modal::backdrop{
+  background: rgb(0, 0, 0 / .17);
+}
+
+#modal h2{
+  display: inline-block;
+  color: var(--text-primary-clr);
+  align-self: center;
+}
+
 /*------------------------------------------3) NavBar Animations------------------------------------------*/
 
 .navbar:hover .link-text {
@@ -99,7 +119,7 @@ main {
 
 .cog:hover
 {
-  rotate: 360deg;
+  rotate: 180deg;
 }
 
 /*------------------------------------------4) Banner------------------------------------------*/
