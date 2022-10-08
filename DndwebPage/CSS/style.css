@@ -26,47 +26,41 @@
   --dark-text-clr: white;
 }
 
-@media (prefers-color-scheme: light)
-{
-  :root
-  {
+@media (prefers-color-scheme: light) {
+  :root {
     --main-clr: var(--light-main-clr);
     --primary-clr: var(--light-primary-clr);
-    --secondary-clr:var(--light-secondary-clr);
+    --secondary-clr: var(--light-secondary-clr);
     --bg-clr: var(--light-bg-clr);
     --text-clr: var(--light-text-clr);
     color-scheme: light;
   }
 }
 
-@media (prefers-color-scheme: dark)
-{
-  :root
-  {
+@media (prefers-color-scheme: dark) {
+  :root {
     --main-clr: var(--dark-main-clr);
     --primary-clr: var(--dark-primary-clr);
-    --secondary-clr:var(--dark-secondary-clr);
+    --secondary-clr: var(--dark-secondary-clr);
     --bg-clr: var(--dark-bg-clr);
     --text-clr: var(--dark-text-clr);
     color-scheme: dark;
   }
 }
 
-:root[data-theme="light"]
-{
+:root[data-theme="light"] {
   --main-clr: var(--light-main-clr);
   --primary-clr: var(--light-primary-clr);
-  --secondary-clr:var(--light-secondary-clr);
+  --secondary-clr: var(--light-secondary-clr);
   --bg-clr: var(--light-bg-clr);
   --text-clr: var(--light-text-clr);
   color-scheme: light;
 }
 
-:root[data-theme="dark"]
-{
+:root[data-theme="dark"] {
   --main-clr: var(--dark-main-clr);
   --primary-clr: var(--dark-primary-clr);
-  --secondary-clr:var(--dark-secondary-clr);
+  --secondary-clr: var(--dark-secondary-clr);
   --bg-clr: var(--dark-bg-clr);
   --text-clr: var(--dark-text-clr);
   color-scheme: dark;
@@ -121,7 +115,7 @@ main {
   margin-left: .5rem;
 }
 
-.nav-svg{
+.nav-svg {
   margin: 0;
   stroke: black;
   fill: black;
@@ -131,8 +125,7 @@ main {
 
 
 /*------------------------------------------3.1) Preference Menu Open Button------------------------------------------*/
-.open-button
-{
+.open-button {
   border: none;
   background: none;
 }
@@ -147,7 +140,7 @@ main {
 
 /*------------------------------------------3.2) Preference Menu Modal------------------------------------------*/
 
-.modal::backdrop{
+.modal::backdrop {
   background: rgb(0, 0, 0 / .17);
 }
 
@@ -166,23 +159,21 @@ main {
 }
 
 /*------------------------------------------3.2) Preference Menu Theme Selector------------------------------------------*/
-.theme-selector
-{
+.theme-selector {
   display: grid;
   place-items: center;
 }
 
-.theme-selector h3{
+.theme-selector h3 {
   color: var(--text-clr);
 }
 
-.theme-container
-{
+.theme-container {
   display: flex;
   gap: 1rem;
 }
 
-.theme{
+.theme {
   border-radius: 100vmax;
   padding: .6em;
   display: grid;
@@ -205,12 +196,11 @@ main {
   display: block;
 }
 
-.nav-link:hover > svg *{
+.nav-link:hover>svg * {
   fill: var(--main-clr);
 }
 
-.cog:hover
-{
+.cog:hover {
   rotate: 180deg;
 }
 
@@ -373,13 +363,17 @@ main {
     display: inline;
     transition: opacity var(1000ms);
   }
+
   .open-button {
     position: fixed;
     bottom: 0;
     left: .2em;
   }
-  
+
 }
+
+/*d20 css*/
+
 
 /*--------------------Chris' CSS-----------------*/
 
@@ -422,10 +416,14 @@ ch-a:active {
 }
 
 .ch-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  width: fit-content;
+  margin-inline: auto;
 }
+
+
 
 .center {
   display: flex;
@@ -433,4 +431,28 @@ ch-a:active {
   width: 100%;
 }
 
-.corestat {}
+.ch-base {
+  display: grid;
+  grid-template-columns: 2;
+  grid-template-rows: 2;
+}
+
+.ch-name {
+  display: inline-flex;
+}
+
+.hp {
+  display: grid;
+  width: max-content;
+  padding: .3rem .7rem;
+  border-radius: 25%;
+  text-align: center;
+  color: white;
+  font: 900 serif;
+  background-color: rgb(10, 165, 165);
+}
+
+.save-throw {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
