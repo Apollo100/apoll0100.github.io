@@ -1,10 +1,7 @@
 /*
    1.Root
    2.NavBar
-   3.Dropdown
-   4.Accordion
-   5.Banner
-   6.NPCLinks
+   3.Preference Menu
 */
 
 /*------------------------------------------1) Root------------------------------------------*/
@@ -29,8 +26,54 @@
   --dark-text-clr: white;
 }
 
+@media (prefers-color-scheme: light)
+{
+  :root
+  {
+    --main-clr: var(--light-main-clr);
+    --primary-clr: var(--light-primary-clr);
+    --secondary-clr:var(--light-secondary-clr);
+    --bg-clr: var(--light-bg-clr);
+    --text-clr: var(--light-text-clr);
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark)
+{
+  :root
+  {
+    --main-clr: var(--dark-main-clr);
+    --primary-clr: var(--dark-primary-clr);
+    --secondary-clr:var(--dark-secondary-clr);
+    --bg-clr: var(--dark-bg-clr);
+    --text-clr: var(--dark-text-clr);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="light"]
+{
+  --main-clr: var(--light-main-clr);
+  --primary-clr: var(--light-primary-clr);
+  --secondary-clr:var(--light-secondary-clr);
+  --bg-clr: var(--light-bg-clr);
+  --text-clr: var(--light-text-clr);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"]
+{
+  --main-clr: var(--dark-main-clr);
+  --primary-clr: var(--dark-primary-clr);
+  --secondary-clr:var(--dark-secondary-clr);
+  --bg-clr: var(--dark-bg-clr);
+  --text-clr: var(--dark-text-clr);
+  color-scheme: dark;
+}
+
 body {
-  background: var(--light-bg-clr);
+  background: var(--bg-clr);
   margin: 0;
   padding: 0;
 }
@@ -44,7 +87,7 @@ main {
 
 .navbar {
   position: fixed;
-  background-color: var(--light-primary-clr);
+  background-color: var(--primary-clr);
   transition: width 200ms ease;
 }
 
@@ -62,9 +105,6 @@ main {
   width: 100%;
 }
 
-.nav-item:last-child {
-  margin-top: 12.5em;
-}
 
 .nav-link {
   display: flex;
@@ -72,7 +112,7 @@ main {
   height: 5rem;
   font-size: 12px;
   font-weight: 500;
-  color: var(--light-text-clr);
+  color: var(--text-clr);
   text-decoration: none;
 }
 
@@ -81,15 +121,18 @@ main {
   margin-left: .5rem;
 }
 
-.navbar svg {
+.nav-svg{
   margin: 0;
   stroke: black;
   fill: black;
 }
 
-/*------------------------------------------3) Options Menu------------------------------------------*/
+/*------------------------------------------3) Preference Menu------------------------------------------*/
 
-.open-button {
+
+/*------------------------------------------3.1) Preference Menu Open Button------------------------------------------*/
+.open-button
+{
   border: none;
   background: none;
 }
@@ -102,13 +145,15 @@ main {
   transition: 2ss ease;
 }
 
-.modal::backdrop {
+/*------------------------------------------3.2) Preference Menu Modal------------------------------------------*/
+
+.modal::backdrop{
   background: rgb(0, 0, 0 / .17);
 }
 
 #modal h2 {
   display: inline-block;
-  color: var(--light-text-clr);
+  color: var(--text-clr);
   align-self: center;
   text-decoration: underline;
 }
@@ -117,11 +162,31 @@ main {
   padding: 5em;
   max-width: 50ch;
   border: none;
-  box-shadow: 0 0 1em var(--light-primary-clr);
+  box-shadow: 0 0 1em var(--primary-clr);
 }
 
-.theme-selector {
+/*------------------------------------------3.2) Preference Menu Theme Selector------------------------------------------*/
+.theme-selector
+{
+  display: grid;
+  place-items: center;
+}
+
+.theme-selector h3{
+  color: var(--text-clr);
+}
+
+.theme-container
+{
   display: flex;
+  gap: 1rem;
+}
+
+.theme{
+  border-radius: 100vmax;
+  padding: .6em;
+  display: grid;
+  place-items: center;
 }
 
 .theme-selector h3::after {
@@ -134,20 +199,25 @@ main {
   padding-left: .75em;
 }
 
-/*------------------------------------------3) NavBar Animations------------------------------------------*/
+/*------------------------------------------4) NavBar Animations------------------------------------------*/
 
 .navbar:hover .link-text {
   display: block;
 }
 
-.nav-link:hover>svg * {
-  fill: var(--light-primary-clr);
+.nav-link:hover > svg *{
+  fill: var(--main-clr);
 }
 
-/*------------------------------------------4) Banner------------------------------------------*/
+.cog:hover
+{
+  rotate: 180deg;
+}
+
+/*------------------------------------------5) Banner------------------------------------------*/
 
 .banner {
-  border-bottom: 4px solid var(--light-main-clr);
+  border-bottom: 4px solid var(--main-clr);
 }
 
 .text-center,
@@ -157,7 +227,7 @@ main {
   font-size: 2em;
 }
 
-/*------------------------------------------5) NPC-Links------------------------------------------*/
+/*------------------------------------------6) NPC-Links------------------------------------------*/
 
 .NPCLinks {
   text-decoration: none;
@@ -176,7 +246,7 @@ main {
   margin: .5em;
   height: fit-content;
   max-width: 25%;
-  background: var(--light-bg-clr);
+  background: var(--bg-clr);
   border-radius: .5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   cursor: default;
@@ -249,7 +319,7 @@ main {
   cursor: pointer;
 }
 
-/*------------------------------------------6) Media-Query------------------------------------------*/
+/*------------------------------------------7) Media-Query------------------------------------------*/
 
 /*Small Screens*/
 @media only screen and (max-width: 600px) {
@@ -257,7 +327,7 @@ main {
     bottom: 0;
     width: 100vw;
     height: 5rem;
-    border-top: 4px solid var(--light-main-clr);
+    border-top: 4px solid var(--main-clr);
   }
 
   .navbar-nav {
@@ -270,6 +340,7 @@ main {
 
   .nav-link {
     justify-content: center;
+    padding-bottom: 1.5em;
   }
 
   main {
@@ -283,10 +354,6 @@ main {
   .navbar img {
     padding-right: 1em;
   }
-
-  .navbar img {
-    padding-right: 1em;
-  }
 }
 
 /*Large Screens*/
@@ -295,7 +362,7 @@ main {
     top: 0;
     width: 5rem;
     height: 100vh;
-    border-right: 4px solid var(--light-main-clr);
+    border-right: 4px solid var(--main-clr);
   }
 
   .navbar:hover {
@@ -306,6 +373,12 @@ main {
     display: inline;
     transition: opacity var(1000ms);
   }
+  .open-button {
+    position: fixed;
+    bottom: 0;
+    left: .2em;
+  }
+  
 }
 
 /*--------------------Chris' CSS-----------------*/
