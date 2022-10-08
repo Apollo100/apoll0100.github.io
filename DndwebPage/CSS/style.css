@@ -1,7 +1,7 @@
 /*
    1.Root
    2.NavBar
-   3.Prefe
+   3.Preference Menu
 */
 
 /*------------------------------------------1) Root------------------------------------------*/
@@ -15,13 +15,13 @@
   /*light palette*/
   --light-main-clr: rgb(135, 152, 106);
   --light-primary-clr: rgb(151, 169, 124);
-  --light-secondary-clr:rgb(181, 201, 154);
+  --light-secondary-clr: rgb(181, 201, 154);
   --light-bg-clr: rgb(113, 131, 85);
   --light-text-clr: black;
   /*dark palette*/
   --dark-main-clr: rgb(73, 80, 87);
   --dark-primary-clr: rgb(108, 117, 125);
-  --secondary-clr:rgb(173, 181, 189);
+  --secondary-clr: rgb(173, 181, 189);
   --dark-bg-clr: rgb(33, 37, 41);
   --dark-text-clr: white;
 }
@@ -137,7 +137,7 @@ main {
   background: none;
 }
 
-.cog{
+.cog {
   transition: 1000ms ease;
   transition-delay: 2ms;
   fill: black;
@@ -151,14 +151,14 @@ main {
   background: rgb(0, 0, 0 / .17);
 }
 
-#modal h2{
+#modal h2 {
   display: inline-block;
   color: var(--text-clr);
   align-self: center;
   text-decoration: underline;
 }
 
-.modal{
+.modal {
   padding: 5em;
   max-width: 50ch;
   border: none;
@@ -189,11 +189,11 @@ main {
   place-items: center;
 }
 
-.theme-selector h3::after{
+.theme-selector h3::after {
   content: ":";
 }
 
-.theme-selector p{
+.theme-selector p {
   align-self: center;
   font-size: 1.8em;
   padding-left: .75em;
@@ -254,6 +254,7 @@ main {
 
 .GroupID {
   display: block;
+  justify-content: safe;
   margin-left: 3em;
   letter-spacing: .25rem;
 }
@@ -333,7 +334,7 @@ main {
     flex-direction: row;
   }
 
-  .navbar svg{
+  .navbar svg {
     padding-bottom: .6em;
   }
 
