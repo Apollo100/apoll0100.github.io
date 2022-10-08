@@ -15,16 +15,22 @@
 :root {
   font-size: 16px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  --main-clr: rgb(135, 152, 106);
-  --primary-clr: rgb(151, 169, 124);
-  --secondary-clr:rgb(181, 201, 154);
-  --bg-clr: rgb(113, 131, 85);
-  --text-primary-clr: black;
-  --text-secondary-clr: white;
+  /*light palette*/
+  --light-main-clr: rgb(135, 152, 106);
+  --light-primary-clr: rgb(151, 169, 124);
+  --light-secondary-clr:rgb(181, 201, 154);
+  --light-bg-clr: rgb(113, 131, 85);
+  --light-text-clr: black;
+  /*dark palette*/
+  --dark-main-clr: rgb(73, 80, 87);
+  --dark-primary-clr: rgb(108, 117, 125);
+  --secondary-clr:rgb(173, 181, 189);
+  --dark-bg-clr: rgb(33, 37, 41);
+  --dark-text-clr: white;
 }
 
 body {
-  background: var(--bg-clr);
+  background: var(--light-bg-clr);
   margin: 0;
   padding: 0;
 }
@@ -38,7 +44,7 @@ main {
 
 .navbar {
   position: fixed;
-  background-color: var(--primary-clr);
+  background-color: var(--light-primary-clr);
   transition: width 200ms ease;
 }
 
@@ -66,7 +72,7 @@ main {
   height: 5rem;
   font-size: 12px;
   font-weight: 500;
-  color: var(--text-primary-clr);
+  color: var(--light-text-clr);
   text-decoration: none;
 }
 
@@ -103,8 +109,31 @@ main {
 
 #modal h2{
   display: inline-block;
-  color: var(--text-primary-clr);
+  color: var(--light-text-clr);
   align-self: center;
+  text-decoration: underline;
+}
+
+.modal{
+  padding: 5em;
+  max-width: 50ch;
+  border: none;
+  box-shadow: 0 0 1em var(--light-primary-clr);
+}
+
+.theme-selector
+{
+  display: flex;
+}
+
+.theme-selector h3::after{
+  content: ":";
+}
+
+.theme-selector p{
+  align-self: center;
+  font-size: 1.8em;
+  padding-left: .75em;
 }
 
 /*------------------------------------------3) NavBar Animations------------------------------------------*/
@@ -114,7 +143,7 @@ main {
 }
 
 .nav-link:hover > svg *{
-  fill: var(--secondary-clr);
+  fill: var(--light-secondary-clr);
 }
 
 .cog:hover
@@ -125,7 +154,7 @@ main {
 /*------------------------------------------4) Banner------------------------------------------*/
 
 .banner {
-  border-bottom: 4px solid var(--dark-clr);
+  border-bottom: 4px solid var(--light-main-clr);
 }
 
 .text-center,
@@ -154,7 +183,7 @@ main {
   margin: .5em;
   height: fit-content;
   max-width: 25%;
-  background: var(--bg-primary);
+  background: var(--light-bg-clr);
   border-radius: .5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   cursor: default;
@@ -234,7 +263,7 @@ main {
     bottom: 0;
     width: 100vw;
     height: 5rem;
-    border-top: 4px solid var(--main-clr);
+    border-top: 4px solid var(--light-main-clr);
   }
 
   .navbar-nav {
@@ -272,7 +301,7 @@ main {
     top: 0;
     width: 5rem;
     height: 100vh;
-    border-right: 4px solid var(--main-clr);
+    border-right: 4px solid var(--light-main-clr);
   }
 
   .navbar:hover {
