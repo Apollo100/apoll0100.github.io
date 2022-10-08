@@ -15,18 +15,16 @@
 :root {
   font-size: 16px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  --dark-clr: #212121;
-  --primary-clr: #757575;
-  --light-clr: #f0f5f9;
-  --text-primary: #c9d6df;
-  --text-secondary: #ececec;
-  --bg-primary: #222831;
-  --bg-secondary: #393e46;
+  --main-clr: rgb(135, 152, 106);
+  --primary-clr: rgb(151, 169, 124);
+  --secondary-clr:rgb(181, 201, 154);
+  --bg-clr: rgb(113, 131, 85);
+  --text-primary-clr: black;
+  --text-secondary-clr: white;
 }
 
 body {
-  color: black;
-  background: var(--primary-clr);
+  background: var(--bg-clr);
   margin: 0;
   padding: 0;
 }
@@ -40,12 +38,8 @@ main {
 
 .navbar {
   position: fixed;
-  background-color: var(--bg-primary);
+  background-color: var(--primary-clr);
   transition: width 200ms ease;
-}
-
-.nav-item img {
-  padding-left: 1rem;
 }
 
 .navbar-nav {
@@ -63,25 +57,32 @@ main {
 }
 
 .nav-item:last-child {
-  margin-top: auto;
+  margin-top: 12.5em;
+}
+
+.cog
+{
+  transition-delay: 5ms;
+  transition: ease 1000ms;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   height: 5rem;
-  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary-clr);
   text-decoration: none;
 }
 
 .link-text {
   display: none;
-  margin-left: 1rem;
+  margin-left: .5rem;
 }
 
 .navbar svg{
   margin: 0;
-  margin-bottom: 1em;
   stroke: black;
   fill: black;
 }
@@ -93,7 +94,12 @@ main {
 }
 
 .nav-link:hover > svg *{
-  fill: var(--light-primary-clr);
+  fill: var(--secondary-clr);
+}
+
+.cog:hover
+{
+  rotate: 360deg;
 }
 
 /*------------------------------------------4) Banner------------------------------------------*/
@@ -282,20 +288,20 @@ dialog:modal {
   flex-direction: column;
 }
 
-a:visited {
+ch-a:visited {
   text-decoration: none;
   color: aqua;
 }
 
-a:link {
+ch-a:link {
   text-decoration: none;
 }
 
-a:hover {
+ch-a:hover {
   text-decoration: none;
 }
 
-a:active {
+ch-a:active {
   text-decoration: none;
 }
 
