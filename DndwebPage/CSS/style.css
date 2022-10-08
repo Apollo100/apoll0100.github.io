@@ -15,18 +15,22 @@
 :root {
   font-size: 16px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  --dark-clr: #212121;
-  --primary-clr: #757575;
-  --light-clr: #f0f5f9;
-  --text-primary: #c9d6df;
-  --text-secondary: #ececec;
-  --bg-primary: #222831;
-  --bg-secondary: #393e46;
+  /*light palette*/
+  --light-main-clr: rgb(135, 152, 106);
+  --light-primary-clr: rgb(151, 169, 124);
+  --light-secondary-clr: rgb(181, 201, 154);
+  --light-bg-clr: rgb(113, 131, 85);
+  --light-text-clr: black;
+  /*dark palette*/
+  --dark-main-clr: rgb(73, 80, 87);
+  --dark-primary-clr: rgb(108, 117, 125);
+  --secondary-clr: rgb(173, 181, 189);
+  --dark-bg-clr: rgb(33, 37, 41);
+  --dark-text-clr: white;
 }
 
 body {
-  color: black;
-  background: var(--primary-clr);
+  background: var(--light-bg-clr);
   margin: 0;
   padding: 0;
 }
@@ -40,12 +44,8 @@ main {
 
 .navbar {
   position: fixed;
-  background-color: var(--bg-primary);
+  background-color: var(--light-primary-clr);
   transition: width 200ms ease;
-}
-
-.nav-item img {
-  padding-left: 1rem;
 }
 
 .navbar-nav {
@@ -63,27 +63,75 @@ main {
 }
 
 .nav-item:last-child {
-  margin-top: auto;
+  margin-top: 12.5em;
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   height: 5rem;
-  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--light-text-clr);
   text-decoration: none;
 }
 
 .link-text {
   display: none;
-  margin-left: 1rem;
+  margin-left: .5rem;
 }
 
 .navbar svg {
   margin: 0;
-  margin-bottom: 1em;
   stroke: black;
   fill: black;
+}
+
+/*------------------------------------------3) Options Menu------------------------------------------*/
+
+.open-button {
+  border: none;
+  background: none;
+}
+
+.cog {
+  transition: 1000ms ease;
+  transition-delay: 2ms;
+  fill: black;
+  transition-delay: rotate 2s;
+  transition: 2ss ease;
+}
+
+.modal::backdrop {
+  background: rgb(0, 0, 0 / .17);
+}
+
+#modal h2 {
+  display: inline-block;
+  color: var(--light-text-clr);
+  align-self: center;
+  text-decoration: underline;
+}
+
+.modal {
+  padding: 5em;
+  max-width: 50ch;
+  border: none;
+  box-shadow: 0 0 1em var(--light-primary-clr);
+}
+
+.theme-selector {
+  display: flex;
+}
+
+.theme-selector h3::after {
+  content: ":";
+}
+
+.theme-selector p {
+  align-self: center;
+  font-size: 1.8em;
+  padding-left: .75em;
 }
 
 /*------------------------------------------3) NavBar Animations------------------------------------------*/
@@ -99,7 +147,7 @@ main {
 /*------------------------------------------4) Banner------------------------------------------*/
 
 .banner {
-  border-bottom: 4px solid var(--dark-clr);
+  border-bottom: 4px solid var(--light-main-clr);
 }
 
 .text-center,
@@ -128,7 +176,7 @@ main {
   margin: .5em;
   height: fit-content;
   max-width: 25%;
-  background: var(--bg-primary);
+  background: var(--light-bg-clr);
   border-radius: .5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   cursor: default;
@@ -209,7 +257,7 @@ main {
     bottom: 0;
     width: 100vw;
     height: 5rem;
-    border-top: 4px solid var(--main-clr);
+    border-top: 4px solid var(--light-main-clr);
   }
 
   .navbar-nav {
@@ -247,7 +295,7 @@ main {
     top: 0;
     width: 5rem;
     height: 100vh;
-    border-right: 4px solid var(--main-clr);
+    border-right: 4px solid var(--light-main-clr);
   }
 
   .navbar:hover {
@@ -283,20 +331,20 @@ dialog:modal {
   flex-direction: column;
 }
 
-a:visited {
+ch-a:visited {
   text-decoration: none;
   color: aqua;
 }
 
-a:link {
+ch-a:link {
   text-decoration: none;
 }
 
-a:hover {
+ch-a:hover {
   text-decoration: none;
 }
 
-a:active {
+ch-a:active {
   text-decoration: none;
 }
 
