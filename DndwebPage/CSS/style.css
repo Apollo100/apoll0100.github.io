@@ -79,7 +79,7 @@ main {
   margin-left: 1rem;
 }
 
-.navbar svg{
+.navbar svg {
   margin: 0;
   margin-bottom: 1em;
   stroke: black;
@@ -92,7 +92,7 @@ main {
   display: block;
 }
 
-.nav-link:hover > svg *{
+.nav-link:hover>svg * {
   fill: var(--light-primary-clr);
 }
 
@@ -136,6 +136,7 @@ main {
 
 .GroupID {
   display: block;
+  justify-content: safe;
   margin-left: 3em;
   letter-spacing: .25rem;
 }
@@ -215,7 +216,7 @@ main {
     flex-direction: row;
   }
 
-  .navbar svg{
+  .navbar svg {
     padding-bottom: .6em;
   }
 
