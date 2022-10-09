@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7731291074.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/DndwebPage/CSS/style.css">
+    <title>HomePage</title>
+</head>
+
+<!--
+    1. NavBar
+        1.1 NavItems
+    2. Banner
+    3. Cards
+    4. JS Imports
+-->
+
+<body>
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <!-----------------------------NavItems------------------------------------------>
+            <li class="nav-item">
+                <a href="/index.html" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class = "nav-svg" width="64" height="64" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M21 20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.49a1 1 0 0 1 .386-.79l8-6.222a1 1 0 0 1 1.228 0l8 6.222a1 1 0 0 1 .386.79V20z"/></svg>
+
+                    <span class="link-text">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/DndwebPage/Pages/NPCMenu/NPC-Menu.html"class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class = "nav-svg" width="64" height="64" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="black" d="M20 22H4v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2zm-8-9a6 6 0 1 1 0-12a6 6 0 0 1 0 12z"/></svg>
+
+                    <span class="link-text">NPCs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/players/elijah.html" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class = "nav-svg" width="64" height="64" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12S6.48 2 12 2zM6.023 15.416C7.491 17.606 9.695 19 12.16 19c2.464 0 4.669-1.393 6.136-3.584A8.968 8.968 0 0 0 12.16 13a8.968 8.968 0 0 0-6.137 2.416zM12 11a3 3 0 1 0 0-6a3 3 0 0 0 0 6z"/></svg>
+
+                    <span class="link-text">PCs</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" class = "nav-svg" width="64" height="64" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M16.95 11.95a6.996 6.996 0 0 0 1.858-6.582l2.495-1.07a.5.5 0 0 1 .697.46V19l-7 3l-6-3l-6.303 2.701a.5.5 0 0 1-.697-.46V7l3.129-1.341a6.993 6.993 0 0 0 1.921 6.29L12 16.9l4.95-4.95zm-1.414-1.414L12 14.07l-3.536-3.535a5 5 0 1 1 7.072 0z"/></svg>
+                    <span class="link-text">Maps</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">     
+                    <svg xmlns="http://www.w3.org/2000/svg" class = "nav-svg" width="64" height="64" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1z"/></svg>                 
+                    <span class="link-text">Lore</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <button class="open-button nav-link"><svg class="cog" xmlns="http://www.w3.org/2000/svg" class = "nav-svg" width="64" height="64" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="black" d="m8.686 4l2.607-2.607a1 1 0 0 1 1.414 0L15.314 4H19a1 1 0 0 1 1 1v3.686l2.607 2.607a1 1 0 0 1 0 1.414L20 15.314V19a1 1 0 0 1-1 1h-3.686l-2.607 2.607a1 1 0 0 1-1.414 0L8.686 20H5a1 1 0 0 1-1-1v-3.686l-2.607-2.607a1 1 0 0 1 0-1.414L4 8.686V5a1 1 0 0 1 1-1h3.686zM12 15a3 3 0 1 0 0-6a3 3 0 0 0 0 6z"/></svg></button>
+            </li>
+        </ul>
+    </nav>
+    <!--------------------------Banner------------------------------------------>
+    <img src="/DndwebPage/Images/banner.png" width="100%" class="banner">
+    <dialog id="modal" class="modal">
+        <h2>Preferences</h2>
+        <div class="theme-selector" role="group">
+            <h3>Themes</h3>
+            <div class="theme-container">
+                <button class="btn theme" aria-label="Apply Light Theme" data-theme="light">Light</button>
+                <button class="btn theme" aria-label="Apply Dark Theme" data-theme="dark">Dark</button>
+            </div>
+
+        </div>
+        <button class="close-button">close</button>
+    </dialog>
+    <script src="/DndwebPage/java/app.js"></script>
+</body>
+</html>
