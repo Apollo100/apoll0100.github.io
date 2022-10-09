@@ -4,15 +4,6 @@ const closeModal = document.querySelector('.close-button');
 
 const themeBtn = document.querySelectorAll('.theme');
 
-const activePage = window.location.pathname;
-const navLinks = document.querySelectorAll('nav a').
-forEach(link => {
-    if(link.href.includes('${activePage}'))
-    {
-        link.classList.add('active');
-    }
-})
-
 const handleThemeChange = (e) => {
     const theme = e.currentTarget.dataset.theme;
     document.documentElement.setAttribute('data-theme', theme);

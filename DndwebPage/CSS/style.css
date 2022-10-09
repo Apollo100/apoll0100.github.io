@@ -135,7 +135,7 @@ main {
   transition-delay: 2ms;
   fill: black;
   transition-delay: rotate 2s;
-  transition: 2ss ease;
+  transition: 2s ease;
 }
 
 /*------------------------------------------3.2) Preference Menu Modal------------------------------------------*/
@@ -344,6 +344,7 @@ main {
   .navbar img {
     padding-right: 1em;
   }
+
 }
 
 /*Large Screens*/
