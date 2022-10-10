@@ -131,94 +131,12 @@ main {
 
 /*------------------------------------------6) NPC-Links------------------------------------------*/
 
-.NPCLinks {
-  text-decoration: none;
-  color: black;
-}
-
-.NPCLinks:hover {
-  background: rgba(0, 0, 0, 0.45);
-  font-weight: 500;
-  color: rebeccapurple;
-}
-
-.card {
-  padding-left: 1em;
-  padding: .25rem;
-  margin: .5em;
-  height: fit-content;
-  max-width: 25%;
-  background: var(--bg-clr);
-  border-radius: .5rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-  cursor: default;
-}
-
-.GroupID {
-  display: block;
-  justify-content: safe;
-  margin-left: 3em;
-  letter-spacing: .25rem;
-}
-
-.card-body {
-  font-size: .9rem;
-}
-
-.card-header {
-  font-size: 1.5rem;
-  margin-bottom: .5rem;
-}
-
-.card-footer {
-  margin-top: .5rem;
-}
-
-.btn {
-  background: hsl(200, 50%, 50%);
-  color: white;
-  border: none;
-  font-size: 1rem;
-  margin-bottom: .5em;
-  padding: .5rem .75rem;
-  border-radius: .3rem;
-  cursor: pointer;
-}
-
-.btn:hover, .btn:focus {
-  background: hsl(200, 50%, 60%);
-}
-
-.card li {
-  list-style-type: none;
-  display: block;
-  margin-bottom: 1.15em;
-  font-family: 'Times New Roman', Times, serif;
-  font-weight: bold;
-}
-
-.container {
+.cards
+{
   display: flex;
-  justify-content: center;
-}
-
-.slider {
-  padding-left: 5em;
-  display: flex;
-  flex-grow: 1;
-  width: calc(100% - 10rem);
-  transform: translateX(-00%);
-}
-
-.handle {
-  flex-grow: 0;
-  width: 5rem;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  border-radius: 1rem;
-  z-index: 10;
-  margin: .25 0;
-  cursor: pointer;
+  min-height: 100vh;
+  line-height: 1.6;
+  border: red 4px solid;
 }
 
 /*------------------------------------------7) Media-Query------------------------------------------*/
