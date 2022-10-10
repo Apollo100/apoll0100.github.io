@@ -112,9 +112,6 @@ main {
   fill: var(--main-clr);
 }
 
-.cog:hover {
-  rotate: 180deg;
-}
 
 /*------------------------------------------5) Banner------------------------------------------*/
 
@@ -131,12 +128,59 @@ main {
 
 /*------------------------------------------6) NPC-Links------------------------------------------*/
 
-.cards
-{
+.cards{
+  margin:0 8em;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 250px;
+  font-family: sans-serif;
+}
+
+.card{
+  margin-top: 1em;
+  width: 40ch;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.card__image{
+  width: 100%;
+  display: block;
+}
+
+.card__content{
+  line-height: 1.5;
+  font-size: 0.9em;
+  padding: 15px;
+  background: var(--primary-clr);
+}
+
+.card__content > p:first-of-type{
+  margin-top: 0;
+}
+.card__content > p:last-of-type{
+  margin-bottom: 0;
+}
+
+.card__info{
+  padding: 15px;
   display: flex;
-  min-height: 100vh;
-  line-height: 1.6;
-  border: red 4px solid;
+  justify-content: space-between;
+  align-items: center;
+  background: #eeeeee;
+  font-size: 0.8em;
+  border-bottom: 2px solid #cccccc;
+}
+
+.card__info i{
+  font-size: 0.9em;
+  margin-right: 8px;
+}
+
+.card__link{
+  color: var(--bg-clr);
+  text-decoration: none;
+  display: block;
 }
 
 /*------------------------------------------7) Media-Query------------------------------------------*/
