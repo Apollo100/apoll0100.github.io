@@ -24,6 +24,23 @@
   --secondary-clr: rgb(173, 181, 189);
   --dark-bg-clr: rgb(33, 37, 41);
   --dark-text-clr: white;
+  /* CSS HEX */
+  --rich-black-fogra-39: #0b090aff;
+  --eerie-black: #161a1dff;
+  --blood-red: #660708ff;
+  --ruby-red: #a4161aff;
+  --carnelian: #ba181bff;
+  --imperial-red: #e5383bff;
+  --black-shadows: #b1a7a6ff;
+  --light-gray: #d3d3d3ff;
+  --cultured: #f5f3f4ff;
+  --white: #ffffffff;
+  /* CSS HSL */
+  --rich-black-fogra-29: hsla(207, 95%, 8%, 1);
+  --baby-powder: hsla(100, 100%, 99%, 1);
+  --tiffany-blue: hsla(174, 62%, 47%, 1);
+  --rose-madder: hsla(353, 81%, 51%, 1);
+  --orange-peel: hsla(35, 100%, 55%, 1);
 }
 
 @media (prefers-color-scheme: light) {
