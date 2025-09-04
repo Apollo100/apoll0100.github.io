@@ -9,6 +9,29 @@
 @import "https://unpkg.com/open-props";
 @import "https://unpkg.com/open-props/normalize.min.css";
 
+/* CSS BROWSER RESET - for more control over page styles accross multiple browsers ================= */
+html, body, main, h1, h2, h3, h4, h5, h6, p, blockquote, 
+a, button, em, img, strong, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, textarea, select,
+article, aside, footer, header, nav, section, time,
+::before, ::after {
+	box-sizing: border-box;
+	margin: 0; 
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+
+/* HTML5 - Older browser support for new HTML5 tags ============================== */
+article, aside, figcaption, figure, footer, header, menu, nav, section {
+	display: block;
+}
+
+
 :root {
   font-size: 16px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -45,22 +68,32 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --main-clr: var(--light-main-clr);
-    --primary-clr: var(--light-primary-clr);
-    --secondary-clr: var(--light-secondary-clr);
-    --bg-clr: var(--light-bg-clr);
-    --text-clr: var(--light-text-clr);
+          /* Light Mode Colors */
+          --bg-clr: #e0f0e3; /* Soft mint green */
+          --primary-clr: #2a9d8f; /* Retro teal */
+          --secondary-clr: #264653; /* Dark blue-green */
+          --accent-clr: #e9c46a; /* Mustard yellow accent */
+          --text-clr: #2d3748; /* Almost black */
+          --card-clr: #f8f9fa; /* Off-white for cards */
+
+          /* Nav specific variables */
+          --nav-bg: var(--light-primary);
+          --nav-text: white;
+          --nav-hover: var(--light-accent);
+          --nav-hover-text: var(--light-secondary);
+            
     color-scheme: light;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-clr: var(--dark-main-clr);
-    --primary-clr: var(--dark-primary-clr);
-    --secondary-clr: var(--dark-secondary-clr);
-    --bg-clr: var(--dark-bg-clr);
-    --text-clr: var(--dark-text-clr);
+      --bg-clr: #4a5c69; /* Slate stone */
+      --primary-clr: #6a9c89; /* Mossy green stone */
+      --secondary-clr: #8a7f8d; /* Muted lavender stone */
+      --accent-clr: #c4a35a; /* Kept same mustard gold for consistency */
+      --text-clr: #e2e8d3; /* Pale sage (reversed from light bg) */
+      --dark-card: #5a6c79; /* Darker slate stone */
     color-scheme: dark;
   }
 }
@@ -69,6 +102,10 @@ body {
   background: var(--bg-clr);
   margin: 0;
   padding: 0;
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 main {
@@ -126,7 +163,7 @@ main {
 }
 
 .nav-link:hover>svg * {
-  fill: var(--main-clr);
+  fill: var(--text-clr);
 }
 
 
@@ -143,45 +180,74 @@ main {
   font-size: 2em;
 }
 
-/*------------------------------------------6) NPC-Links------------------------------------------*/
+/*------------------------------------------ 6) Cards ------------------------------------------*/
 
 .cards{
-  margin:0 8em;
-  height: 100%;
+  margin: 0 8em;
+  padding: 1rem;
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 250px;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 2rem;
+
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+
+  border: #5a6c79 solid 2px;
   font-family: sans-serif;
 }
 
+.cards > *{
+  scroll-snap-align: center;
+}
+
 .card{
-  margin-top: 1em;
-  width: 40ch;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  display: grid;
+  grid-auto-flow: column;
+
+  justify-content: center;
+
+  box-sizing: border-box;
+  border-radius: .25rem;
 }
 
-.card__image{
+.card__content img{
   width: 100%;
-  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
-.card__content{
+.card__content ol{
   line-height: 1.5;
   font-size: 0.9em;
+
   padding: 15px;
+  height: 7rem;
+  width: 100%;
+  display: block;
+
+  overflow-y: auto;
   background: var(--primary-clr);
+}
+
+.card__content li{
+  list-style: none;
 }
 
 .card__content > p:first-of-type{
   margin-top: 0;
 }
+
 .card__content > p:last-of-type{
   margin-bottom: 0;
 }
 
 .card__info{
   padding: 15px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   background: #eeeeee;
@@ -234,6 +300,76 @@ main {
 
   .navbar img {
     padding-right: 1em;
+  }
+
+  /*------------------------------------------ 7.2) Cards ------------------------------------------*/
+
+  .cards{
+    height: 25%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+
+    border: #5a6c79 solid 2px;
+    font-family: sans-serif;
+  }
+
+  .cards > *{
+    scroll-snap-align: start;
+  }
+
+  .card{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    width: 75%;
+
+    box-sizing: border-box;
+  }
+
+  .card__image{
+    width: 100%;
+    display: block;
+  }
+
+  .card__content{
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    height: 7rem;
+    overflow-y: auto;
+    background: var(--primary-clr);
+  }
+
+  .card__content > p:first-of-type{
+    margin-top: 0;
+  }
+
+  .card__content > p:last-of-type{
+    margin-bottom: 0;
+  }
+
+  .card__info{
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    background: #eeeeee;
+    font-size: 0.8em;
+    border-bottom: 2px solid #cccccc;
+  }
+
+  .card__info i{
+    font-size: 0.9em;
+    margin-right: 8px;
+  }
+
+  .card__link{
+    color: var(--bg-clr);
+    text-decoration: none;
+    display: block;
   }
 
 }
