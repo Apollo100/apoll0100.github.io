@@ -211,26 +211,34 @@ main {
   justify-content: center;
 
   box-sizing: border-box;
-  border-radius: .25rem;
+}
+
+.card__content{
+  background: var(--primary-clr);
+  border: 2px solid black;
+  border-radius: 4%;
 }
 
 .card__content img{
   width: 100%;
+
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
+
+  padding: 1rem;
 }
 
 .card__content ol{
   line-height: 1.75rem;
   font-size: 0.9em;
 
-  padding: 15px;
   height: 7rem;
-  width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
 
-  overflow-y: auto;
-  background: var(--primary-clr);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .card__content li{
@@ -245,24 +253,9 @@ main {
   margin-bottom: 0;
 }
 
-.card__info{
-  padding: 15px;
-  justify-content: space-between;
-  align-items: center;
-  background: #eeeeee;
-  font-size: 0.8em;
-  border-bottom: 2px solid #cccccc;
-}
-
-.card__info i{
-  font-size: 0.9em;
-  margin-right: 8px;
-}
-
-.card__link{
-  color: var(--bg-clr);
+.card a{
+  color: var(--text-clr);
   text-decoration: none;
-  display: block;
 }
 
 /*------------------------------------------7) Media-Query------------------------------------------*/
@@ -324,8 +317,8 @@ main {
 
   .card{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
     width: 75%;
-
     box-sizing: border-box;
   }
 
